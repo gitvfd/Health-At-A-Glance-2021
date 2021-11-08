@@ -215,6 +215,7 @@ function createComparison(topicSelected,countrySel){
 		var minValue = d3.min(data, function(d) { return parseFloat(d.value); });
 		var maxValue = d3.max(data, function(d) { return parseFloat(d.value); });
 
+
 		if(topicSelected=="LifeExp")
 			x.domain([minValue,maxValue]) ;
 		else
@@ -246,10 +247,13 @@ function createComparison(topicSelected,countrySel){
 		    		return x(parseFloat(d.value));})
 		    .attr("cy",height/2)
 			.attr("r", function(d){
-				if((topicSelected == "LifeExp" || topicSelected == "AvMort" || topicSelected == "ChronicDisMor" || topicSelected == "SelfRated"  ) && d.ISO==countrySel)
+				if((topicSelected == "LifeExp" || topicSelected == "AvMort" || topicSelected == "ChronicDisMor" || topicSelected == "SelfRated"  ) && d.ISO==countrySel){
+
 					return 12;
-				else if(d.ISO==countrySel)
+				}
+				else if(d.ISO==countrySel){
 					return 8;
+				}
 
 				else if (d.Country=="OECD")
 					return 8;

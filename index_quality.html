@@ -79,12 +79,12 @@
 <br/>
 <div class="sector" id="QualityCare">
 	<div class="compareChart">
-		<div class="metadata" tooltip="Antibotics prescribed (defined daily dose per 1 000 people) - 2019">Safe prescribing
+		<div class="metadata" tooltip="Antibotics prescribed (defined daily dose per 1 000 people) - 2019">Safe primary care
 		</div>
 		<span id="safePresc"></span>
 	</div>
 	<div class="compareChart" >
-		<div class="metadata" tooltip="Avoidable COPD admissions (per 100 000 people, age-sex standardised,COPD = chronic obstructive pulmonary disease) - 2019">Effective primary care
+		<div class="metadata" tooltip="Avoidable COPD admissions (per 100 000 people, age-sex standardised, COPD = chronic obstructive pulmonary disease) - 2019">Effective primary care
 		</div>
 		<span id="PrimCare"></span>
 	</div>
@@ -94,7 +94,7 @@
 		<span id="SecCare"></span>
 	</div>
 	<div class="compareChart" >
-		<div class="metadata" tooltip=" Mammography screening within the past 2 years (% women aged 50-69) - 2019">Effective cancer care
+		<div class="metadata" tooltip=" Mammography screening within the past 2 years (% women aged 50-69) - 2019">Effective preventive care
 		</div>
 		<span id="CancerCare"></span>
 	</div>
@@ -376,13 +376,13 @@ test="#"+topicSelected;
 		     d3.select("#indicTooltip")
 		        .text(function(){
 	            	if (topicSelected=="safePresc")
-	            		return "Safe prescribing";
+	            		return "Safe primary care";
 	            	if (topicSelected=="PrimCare")
 	            		return "Effective primary care";
 	            	if (topicSelected=="SecCare")
 	            		return "Effective secondary care ";
 	            	if (topicSelected=="CancerCare")
-	            		return "Effective cancer care";
+	            		return "Effective preventing care";
 	            });
 
 		     d3.select("#valueTooltip")
@@ -390,7 +390,7 @@ test="#"+topicSelected;
 			        if (topicSelected=="safePresc")
 		              return  format(d.value) + " daily doses of antibiotics prescribed per 1 000 people";
 		            else if((topicSelected=="PrimCare" ) )
-						return format(d.value) + " Age-standardised COPD admissions per 100 000 people";
+						return format(d.value) + " Age-standardised avoidable COPD admissions per 100 000 people";
 					else if ((topicSelected == "SecCare"))
 						return format(d.value) + " Age-standardised AMI 30-day mortality per 100 000 people";
 		            else if((topicSelected=="CancerCare" ))

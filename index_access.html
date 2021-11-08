@@ -79,22 +79,22 @@
 <br/>
 <div class="sector" id="AccessCare">
 	<div class="compareChart">
-		<div class="metadata" tooltip="Population eligible for core services (% population) - 2019">Population coverage
+		<div class="metadata" tooltip="Population eligible for core services (% population) - 2019">Coverage: eligibility
 		</div>
 		<span id="popcover"></span>
 	</div>
 	<div class="compareChart" >
-		<div class="metadata" tooltip="Health expenditure from public sources (% total expenditure), 2019">Financial protection
-		</div>
-		<span id="oopexp"></span>
-	</div>
-	<div class="compareChart" >
-		<div class="metadata" tooltip="Availability of quality health care (% satisfied population) - 2019">Quality health care availability
+		<div class="metadata" tooltip="Population satisfied with availability of quality health care (% population) - 2019">Coverage: satisfaction
 		</div>
 		<span id="PrimSerCov"></span>
 	</div>
 	<div class="compareChart" >
-		<div class="metadata" tooltip="Unmet needs for medical examinations (% population) - 2019">Unmet needs
+		<div class="metadata" tooltip="Expenditure covered by compulsory prepayment(% total expenditure), 2019">Financial protection
+		</div>
+		<span id="oopexp"></span>
+	</div>
+	<div class="compareChart" >
+		<div class="metadata" tooltip="Population reporting unmet needs for medical care (% population) - 2019">Service coverage
 		</div>
 		<span id="PrevSerCov"></span>
 	</div>
@@ -367,13 +367,13 @@ test="#"+topicSelected;
 		     d3.select("#indicTooltip")
 		        .text(function(){
 	            	if (topicSelected=="popcover")
-	            		return "Population coverage";
+	            		return "Coverage: eligibility";
 	            	if (topicSelected=="oopexp")
 	            		return "Financial protection";
 	            	if (topicSelected=="PrimSerCov")
-	            		return "Quality health care";
+	            		return "Coverage: satisfaction";
 	            	if (topicSelected=="PrevSerCov")
-	            		return "Unmet needs";
+	            		return "Service coverage";
 	            });
 
 		     d3.select("#valueTooltip")
@@ -381,7 +381,7 @@ test="#"+topicSelected;
 	            	if (topicSelected=="popcover")
 	            		return format(d.value) + " % of population eligible for core services";
 	            	if (topicSelected=="oopexp")
-	            		return format(d.value) + " % of health expenditure from public source";
+	            		return format(d.value) + " % of  expenditure are covered by compulsory prepayment";
 	            	if (topicSelected=="PrimSerCov")
 	            		return format(d.value) + " % of the population is satisfied with the availability of quality health care";
 	            	if (topicSelected=="PrevSerCov")

@@ -94,7 +94,7 @@
 		<span id="obesity"></span>
 	</div>
 	<div class="compareChart" >
-		<div class="metadata" tooltip="Deaths due to pollution (per 100 000 population) - 2019">Ambient air pollution
+		<div class="metadata" tooltip="Deaths (per 100 000 population) - 2019">Ambient air pollution
 		</div>
 		<span id="airpol"></span>
 	</div>
@@ -392,7 +392,7 @@ test="#"+topicSelected;
 		            else if((topicSelected=="alcohol" ) )
 						return format(d.value) + " Liters per capita (15 years+) consumed in a year";
 		            else if((topicSelected=="airpol" ))
-						return d3.format(",.0f")(d.value) + " Deaths due to pollution (per 100 000 population)";
+						return d3.format(",.0f")(d.value) + " Deaths (per 100 000 population)";
         	});
 
 

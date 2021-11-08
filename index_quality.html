@@ -84,7 +84,7 @@
 		<span id="safePresc"></span>
 	</div>
 	<div class="compareChart" >
-		<div class="metadata" tooltip="Avoidable asthma/COPD admissions (per 100 000 people, age-sex standardised,COPD = chronic obstructive pulmonary disease) - 2019">Effective primary care
+		<div class="metadata" tooltip="Avoidable COPD admissions (per 100 000 people, age-sex standardised,COPD = chronic obstructive pulmonary disease) - 2019">Effective primary care
 		</div>
 		<span id="PrimCare"></span>
 	</div>
@@ -365,10 +365,10 @@ test="#"+topicSelected;
 						return 10	
 				});
 
-			var xPosition = event.pageX-20;
+			var xPosition = event.pageX-0;
 			var yPosition = event.pageY+15;
 			if (yPosition>window.innerHeight-200)
-				yPosition=yPosition-160;
+				yPosition=yPosition-50;
 
 			//Update the tooltip position and value
 
@@ -388,13 +388,13 @@ test="#"+topicSelected;
 		     d3.select("#valueTooltip")
 		        .text(function(){
 			        if (topicSelected=="safePresc")
-		              return  format(d.value) + " daily dose of antibiotics prescribed per 1 000 people";
+		              return  format(d.value) + " daily doses of antibiotics prescribed per 1 000 people";
 		            else if((topicSelected=="PrimCare" ) )
-						return format(d.value) + " Age-standardised asthma/COPD admissions per 100 000 people";
+						return format(d.value) + " Age-standardised COPD admissions per 100 000 people";
 					else if ((topicSelected == "SecCare"))
 						return format(d.value) + " Age-standardised AMI 30-day mortality per 100 000 people";
 		            else if((topicSelected=="CancerCare" ))
-						return format(d.value) + " % women aged 50-69 with mammography screening within the past 2 years";
+						return format(d.value) + " % women aged 50-69 had mammography screening within the past 2 years";
         	});
 
 

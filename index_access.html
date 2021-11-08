@@ -79,17 +79,17 @@
 <br/>
 <div class="sector" id="AccessCare">
 	<div class="compareChart">
-		<div class="metadata" tooltip="Population eligible for core services (% population) - 2019">Population coverage, eligibility
+		<div class="metadata" tooltip="Population eligible for core services (% population) - 2019">Population coverage
 		</div>
 		<span id="popcover"></span>
 	</div>
 	<div class="compareChart" >
-		<div class="metadata" tooltip="Spending from public sources (% total expenditure), 2019">Financial protection
+		<div class="metadata" tooltip="Health expenditure from public sources (% total expenditure), 2019">Financial protection
 		</div>
 		<span id="oopexp"></span>
 	</div>
 	<div class="compareChart" >
-		<div class="metadata" tooltip="Availability of quality health care (% population) - 2019">Quality health care
+		<div class="metadata" tooltip="Availability of quality health care (% satisfied population) - 2019">Quality health care availability
 		</div>
 		<span id="PrimSerCov"></span>
 	</div>
@@ -218,7 +218,7 @@ test="#"+topicSelected;
 			x.domain([maxValue,minValue]) ;
 
 
-		if (topicSelected == "popcover" ||  topicSelected == "PrimSerCov" || topicSelected == "PrevSerCov" )
+		if (topicSelected == "PrimSerCov" || topicSelected == "PrevSerCov" )
 			format = d3.format(",.0f");
 		else
 			format = d3.format(",.1f");
@@ -356,10 +356,10 @@ test="#"+topicSelected;
 						return 10	
 				});
 
-			var xPosition = event.pageX-20;
+			var xPosition = event.pageX-0;
 			var yPosition = event.pageY+15;
 			if (yPosition>window.innerHeight-200)
-				yPosition=yPosition-160;
+				yPosition=yPosition-50;
 
 			//Update the tooltip position and value
 
@@ -379,11 +379,11 @@ test="#"+topicSelected;
 		     d3.select("#valueTooltip")
 		        .text(function(){
 	            	if (topicSelected=="popcover")
-	            		return format(d.value) + " % of population eligible for a core set of services";
+	            		return format(d.value) + " % of population eligible for core services";
 	            	if (topicSelected=="oopexp")
-	            		return format(d.value) + " % of health expenditures from public source";
+	            		return format(d.value) + " % of health expenditure from public source";
 	            	if (topicSelected=="PrimSerCov")
-	            		return format(d.value) + " % of the population satisfied with the availability of quality health care";
+	            		return format(d.value) + " % of the population is satisfied with the availability of quality health care";
 	            	if (topicSelected=="PrevSerCov")
 	            		return format(d.value) + " % of the population has unmet needs for medical examination";
         	});

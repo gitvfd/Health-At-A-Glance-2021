@@ -94,7 +94,7 @@
 		<span id="obesity"></span>
 	</div>
 	<div class="compareChart" >
-		<div class="metadata" tooltip="Deaths due to pollution (per 100 000 population) - 2019">Air pollution
+		<div class="metadata" tooltip="Deaths due to pollution (per 100 000 population) - 2019">Ambient air pollution
 		</div>
 		<span id="airpol"></span>
 	</div>
@@ -218,7 +218,11 @@ test="#"+topicSelected;
 		else
 			x.domain([maxValue,minValue]) ;
 
-
+		if (topicSelected == "smoking" || topicSelected == "alcohol" || topicSelected == "obesity")
+			format = d3.format(",.1f");
+		else
+			format = d3.format(",.0f");
+			
 		compChart.append("line")
 			.attr("x1",x(minValue))
 			.attr("y1",height/2)
@@ -309,8 +313,13 @@ test="#"+topicSelected;
 				  	
 			})
 			.text(function(d){
-				if(( d.value==maxValue )&& (d.ISO!=countrySel))
-					return format(d.value) ;
+				if(( d.value==maxValue )&& (d.ISO!=countrySel)){
+					/*if((topicSelected=="airpol" ))
+						return formatNumber(d.value) ;
+		            else*/
+						return format(d.value) ;
+				}
+				
 	      })
 
 		//OECD and Country annotation/
@@ -354,10 +363,10 @@ test="#"+topicSelected;
 						return 10	
 				});
 
-			var xPosition = event.pageX-20;
+			var xPosition = event.pageX-0;
 			var yPosition = event.pageY+15;
 			if (yPosition>window.innerHeight-200)
-				yPosition=yPosition-160;
+				yPosition=yPosition-50;
 
 			//Update the tooltip position and value
 
@@ -371,7 +380,7 @@ test="#"+topicSelected;
 	            	if (topicSelected=="obesity")
 	            		return "Overweight/Obese";
 	            	if (topicSelected=="airpol")
-	            		return " Air pollution ";
+	            		return " Ambient air pollution ";
 	            });
 
 		     d3.select("#valueTooltip")
@@ -379,11 +388,11 @@ test="#"+topicSelected;
 			        if (topicSelected=="smoking" )
 		              return  format(d.value) + " % of population aged 15+ who are daily smokers";
 		            else if((topicSelected=="obesity" ) )
-						return format(d.value) + " % of population aged 15+with BMI ≥ 25 ";
+						return format(d.value) + " % of population aged 15+ with BMI ≥ 25 ";
 		            else if((topicSelected=="alcohol" ) )
 						return format(d.value) + " Liters per capita (15 years+) consumed in a year";
 		            else if((topicSelected=="airpol" ))
-						return format(d.value) + " Deaths due to pollution (per 100 000 population)";
+						return d3.format(",.0f")(d.value) + " Deaths due to pollution (per 100 000 population)";
         	});
 
 

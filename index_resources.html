@@ -361,10 +361,10 @@ console.log(minValue)
 						return 10	
 				});
 
-			var xPosition = event.pageX-20;
+			var xPosition = event.pageX-0;
 			var yPosition = event.pageY+15;
 			if (yPosition>window.innerHeight-200)
-				yPosition=yPosition-160;
+				yPosition=yPosition-50;
 
 			//Update the tooltip position and value
 
@@ -374,11 +374,11 @@ console.log(minValue)
 	            	if (topicSelected=="healthexp")
 	            		return "Health spending";
 	            	if (topicSelected=="doccap")
-	            		return "Doctors";
+	            		return "Practising physicians";
 	            	if (topicSelected=="nursecap")
-	            		return "nurses";
+	            		return "Practisingnurses";
 	            	if (topicSelected=="healthexpShare")
-	            		return "Health spending share";
+	            		return "Hospital beds";
 	            });
 
 		     d3.select("#valueTooltip")

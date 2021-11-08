@@ -212,7 +212,7 @@ test="#"+topicSelected;
 		var minValue = d3.min(data, function(d) { return parseFloat(d.value); });
 		var maxValue = d3.max(data, function(d) { return parseFloat(d.value); });
 
-		if(topicSelected == "excessDeaths" || topicSelected == "covidDeath" || topicSelected == "covidCases" || topicSelected == "vacRates" )
+		if( topicSelected == "vacRates" )
 			x.domain([minValue,maxValue]) ;
 		else
 			x.domain([maxValue,minValue]) ;
@@ -274,7 +274,7 @@ test="#"+topicSelected;
 			.attr("class","label")
 			.attr("dx", function(d){
 				if(d.value!==""){
-					if(topicSelected == "excessDeaths" || topicSelected == "covidDeath" || topicSelected == "covidCases" || topicSelected == "vacRates" )
+					if( topicSelected == "vacRates" )
 				    		return  x(parseFloat(d.value))-12;
 					else
 							return  12 + x(parseFloat(d.value));
@@ -283,7 +283,7 @@ test="#"+topicSelected;
 			.attr("dy",height/2)
 			.style("text-anchor",function(d){
 
-					if(topicSelected == "excessDeaths" || topicSelected == "covidDeath" || topicSelected == "covidCases" || topicSelected == "vacRates" )
+					if( topicSelected == "vacRates" )
 				    		return  "end";
 					else
 							return  "start";
@@ -298,7 +298,7 @@ test="#"+topicSelected;
 			.attr("class","label")
 			.attr("dx", function(d){
 				if(d.value!==""){
-					if(topicSelected == "excessDeaths" || topicSelected == "covidDeath" || topicSelected == "covidCases" || topicSelected == "vacRates" )
+					if( topicSelected == "vacRates" )
 				    		return  12 + x(parseFloat(d.value));
 					else
 							return  x(parseFloat(d.value))-12;
@@ -307,7 +307,7 @@ test="#"+topicSelected;
 			.attr("dy",height/2)
 			.style("text-anchor",function(d){
 
-					if(topicSelected == "excessDeaths" || topicSelected == "covidDeath" || topicSelected == "covidCases" || topicSelected == "vacRates" )
+					if( topicSelected == "vacRates" )
 				    		return  "start";
 					else
 							return  "end";

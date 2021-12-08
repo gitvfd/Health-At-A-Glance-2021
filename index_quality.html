@@ -89,7 +89,7 @@
 		<span id="PrimCare"></span>
 	</div>
 	<div class="compareChart" >
-		<div class="metadata" tooltip="30-day mortality following AMI (per 100 000 people, age-sex standardised, AMI = acute myocardial infarction) - 2019">Effective secondary care
+		<div class="metadata" tooltip="30-day mortality following AMI (per 100 admissions age-sex standardised, AMI = acute myocardial infarction) - 2019">Effective secondary care
 		</div>
 		<span id="SecCare"></span>
 	</div>
@@ -392,9 +392,9 @@ test="#"+topicSelected;
 		            else if((topicSelected=="PrimCare" ) )
 						return format(d.value) + " Age-standardised avoidable COPD admissions per 100 000 people";
 					else if ((topicSelected == "SecCare"))
-						return format(d.value) + " Age-standardised AMI 30-day mortality per 100 000 people";
+						return format(d.value) + " Age-standardised AMI 30-day mortality per 100 admissions";
 		            else if((topicSelected=="CancerCare" ))
-						return format(d.value) + " % women aged 50-69 had mammography screening within the past 2 years";
+						return format(d.value) + " % women aged 50-69 who had mammography screening within the past 2 years";
         	});
 
 
